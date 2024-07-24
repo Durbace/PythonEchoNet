@@ -12,4 +12,4 @@ def echo_client(server_host, server_port):
         print(f"Raspuns primit de la server: {response.decode()}")
 
 if __name__ == "__main__":
-    echo_client('127.0.0.1', 65432)
+    echo_client('host.docker.internal', 65432)
