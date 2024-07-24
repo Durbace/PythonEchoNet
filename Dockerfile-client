@@ -1,5 +1,5 @@
 FROM python:3.9
 WORKDIR /app
 COPY client.py /app
-ENV DOCKER_ENV=host.docker.internal
+ENV RUNNING_IN_DOCKER=true
 CMD ["python", "client.py"]
