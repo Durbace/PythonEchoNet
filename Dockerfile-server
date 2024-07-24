@@ -1,7 +1,6 @@
 FROM python:3.9
-
 WORKDIR /app
-
 COPY echo-server.py /app
-
 CMD ["python", "echo-server.py"]
+EXPOSE 65432
+
