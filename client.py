@@ -1,3 +1,4 @@
+import os
 import socket
 
 def echo_client(server_host, server_port):
@@ -12,4 +13,6 @@ def echo_client(server_host, server_port):
         print(f"Raspuns primit de la server: {response.decode()}")
 
 if __name__ == "__main__":
-    echo_client('host.docker.internal', 65432)
+    server_host = os.getenv('DOCKER_ENV') or '127.0.0.1'
+    echo_client(server_host, 65432)
+
