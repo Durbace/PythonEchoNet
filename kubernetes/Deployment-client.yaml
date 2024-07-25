@@ -13,7 +13,10 @@ spec:
         app: echonet-client
     spec:
       containers:
-      - name: echonet-client
-        image: durbace/echonet-client:latest
-        ports:
-        - containerPort: 8080
+        - name: echonet-client
+          image: durbace/echonet-client:latest
+          env:
+            - name: SERVER_HOST
+              value: "echonet-server-service"
+            - name: SERVER_PORT
+              value: "65432"
