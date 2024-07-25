@@ -35,6 +35,6 @@ def echo_client(server_host, server_port):
                 print(f"Failed to connect to localhost as well: {e}")
 
 if __name__ == "__main__":
-    server_host = os.getenv('SERVER_HOST', 'localhost')
+    server_host = os.getenv('SERVER_HOST', 'echonet-server-service')
     server_port = int(os.getenv('SERVER_PORT', 65432))
     echo_client(server_host, server_port)
