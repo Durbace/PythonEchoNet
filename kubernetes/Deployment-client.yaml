@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: echonet-client
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: echonet-client
+  template:
+    metadata:
+      labels:
+        app: echonet-client
+    spec:
+      containers:
+      - name: echonet-client
+        image: durbace/echonet-client:latest
+        ports:
+        - containerPort: 8080
