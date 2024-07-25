@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: echonet-client
-          image: durbace/echonet-client:latest
+          image: your-username/echonet-client:latest
           env:
             - name: SERVER_HOST
               value: "echonet-server-service"
