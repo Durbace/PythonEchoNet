@@ -7,5 +7,5 @@ spec:
     app: echonet-client
   ports:
     - protocol: TCP
-      port: 80
+      port: 65432
       targetPort: 65432
