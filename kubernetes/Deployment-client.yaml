@@ -20,4 +20,18 @@ spec:
               value: "echonet-server-service.default.svc.cluster.local"
             - name: SERVER_PORT
               value: "65432"
-          restartPolicy: OnFailure
+          livenessProbe:
+            tcpSocket:
+              port: 65432
+            initialDelaySeconds: 15
+            timeoutSeconds: 2
+            periodSeconds: 10
+            failureThreshold: 3
+          readinessProbe:
+            tcpSocket:
+              port: 65432
+            initialDelaySeconds: 5
+            timeoutSeconds: 1
+            periodSeconds: 5
+            successThreshold: 1
+            failureThreshold: 3
